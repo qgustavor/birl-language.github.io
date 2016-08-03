@@ -12,7 +12,8 @@ app.controller("birlCtrl", function($scope, $window, birlService) {
     $scope.btText = "Bora!";
     $scope.stdin = "";
     $scope.stdout = "";
-    $scope.code = "HORA DO SHOW\n    CE QUER VER ESSA PORRA? (\"Hello, World! Porra!\\n\");\n    BORA CUMPADE 0;\nBIRL";
+    $scope.code = decodeURIComponent(location.hash.substr(1)) ||
+    "HORA DO SHOW\n    CE QUER VER ESSA PORRA? (\"Hello, World! Porra!\\n\");\n    BORA CUMPADE 0;\nBIRL";
     $scope.temErro = false;
 
     $scope.sendBirl = function(){
